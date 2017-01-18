@@ -1,0 +1,58 @@
+<section data-ng-controller="BooksController" data-ng-init="findOne()">
+
+	<form class="form-horizontal" data-ng-submit="update()">
+        <div class="control-group">
+            <label class="control-label" for="title">Title</label>
+
+            <div class="controls">
+                <input type="text" data-ng-model="book.title" id="title" placeholder="Title" required>
+
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="author">Author</label>
+
+            <div class="controls">
+                <input type="text" data-ng-model="book.author" id="author" placeholder="Author" required>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="published">Published By</label>
+
+            <div class="controls">
+                <input type="text" data-ng-model="book.published" id="published" placeholder="Published">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="datePublished">Published On</label>
+
+            <div class="controls">
+                <input type="text" data-ng-model="book.datePublished" id="datePublished" placeholder="Date Published">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="category">Category</label>
+
+            <div class="controls">
+                <input type="text" data-ng-model="book.category" id="category" placeholder="Category">
+
+
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="description">Description</label>
+
+            <div class="controls">
+                <textarea data-ng-model="book.description" id="description" cols="30" rows="10"
+                          placeholder="description"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn">
+            </div>
+        </div>
+	</form>
+</section>

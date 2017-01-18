@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="span6">
+        <section data-ng-controller="BooksController">
+
+
+            <form class="form-horizontal" data-ng-submit="create()">
+                <div ng-model="addSuccess">{{addSuccess}}</div>
+                <img ng-model="imageUrl" src="{{imageUrl}}"/>
+
+                <div class="control-group">
+                    <label class="control-label" for="title">Title</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="title" id="title" placeholder="Title" required>
+
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="author">Author</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="author" id="author" placeholder="Author" required>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="published">Published By</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="published" id="published" placeholder="Published">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="datePublished">Published On</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="datePublished" id="datePublished"
+                               placeholder="Date Published">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="categories">Category</label>
+
+                    <div class="controls">
+                        <input type="text" data-ng-model="categories" id="categories" placeholder="Category">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="description">Description</label>
+
+                    <div class="controls">
+                        <textarea data-ng-model="description" id="description" cols="30" rows="10"
+                                  placeholder="description"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" class="btn">
+                    </div>
+                </div>
+            </form>
+    </div>
+    <div class="span6">
+
+        </section>
+
+        <div ng-controller="BooklistController">
+
+            <form id="myForm" class="form-inline form-search" name="myForm">
+                <label>Search for
+                    <input id="in" type="text" ng-model="searchTerm" class="search-query input-medium"/>
+                </label>
+
+                <button class="btn btn-primary" ng-click="doSearch()"> Search</button>
+            </form>
+            <table id="resultsTbl" class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in bookResults" ng-click="getSelected(item.volumeInfo);">
+                    <td>
+                        <a ng-href="{{item.volumeInfo.infoLink}}" target="_blank"><img
+                                ng-src="{{item.volumeInfo.imageLinks.smallThumbnail}}"/>
+                        </a>
+                    </td>
+                    <td>{{item.volumeInfo.title}}<br/>
+                        By: {{item.volumeInfo.authors }}<br/>
+                        Published: {{item.volumeInfo.publisher}}, {{item.volumeInfo.publishedDate}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+
+

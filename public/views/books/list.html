@@ -1,0 +1,16 @@
+<section data-ng-controller="BooksController" data-ng-init="find()">
+	<ul class="books unstyled">
+		<li data-ng-repeat="book in books">
+            <img src="{{book.imageUrl}}" />
+			<span>{{book.created | date:'medium'}}</span> /
+			<span>{{book.user.name}}</span>
+			<h2><a data-ng-href="#!/books/{{book._id}}">{{book.title}}</a></h2>
+			<div>{{book.author}}</div>
+            <div>{{book.published}}</div>
+            <div>{{book.datePublished}}</div>
+            <div>category: {{book.categories}}</div>
+            <div>{{book.description}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!books || books.length">No books yet. <br> Why don't you <a href="/#!/books/create">add One</a>?</h1>
+</section>

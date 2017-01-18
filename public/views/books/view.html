@@ -1,0 +1,15 @@
+<section data-ng-controller="BooksController" data-ng-init="findOne()">
+    <img src="{{book.imageUrl}}"/>
+    <span>{{book.created | date:'medium'}}</span>/
+    <span>{{book.user.name}}</span>
+    <h2>{{book.title}}</h2>
+    <div data-ng-show="global.user._id == book.user._id">
+        <a class="btn" href="/#!/books/{{book._id}}/edit">
+        	<i class="icon-edit"></i>
+        </a> 
+        <a class="btn" data-ng-click="remove();">
+            <i class="icon-trash"></i>
+        </a>
+    </div>
+    <div>{{book.description}}</div>
+</section>
